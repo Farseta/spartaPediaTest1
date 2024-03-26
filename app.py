@@ -44,10 +44,11 @@ def movie_post():
     og_des =soup.select_one('meta[name="description"]')
     img = og_img['content']
     title = og_title['content']
+    title1,title2 = title.split("⭐")
     des = og_des['content']
     doc = {
         'image' : img,
-        'title' : title,
+        'title' : title1,
         'description' : des,
         'star' :star_receive,
         'comment' : comment_receive,
